@@ -8,6 +8,7 @@ private:
 
 public:
     Point(double x, double y);
+    ~Point();
 
     // Getters
     double *getPoint();
