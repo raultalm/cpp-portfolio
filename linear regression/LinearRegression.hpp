@@ -1,5 +1,5 @@
 #include "Data.hpp"
-
+#pragma once
 class LinearRegression
 {
 private:

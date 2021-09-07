@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+#pragma once
 class Point
 {
 private:
@@ -11,7 +11,6 @@ public:
     ~Point();
 
     // Getters
-    double *getPoint();
     double getX();
     double getY();
 

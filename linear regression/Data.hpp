@@ -1,7 +1,7 @@
 #include <vector>
 #include <algorithm>
 #include "Point.hpp"
-
+#pragma once
 class Data
 {
 private:

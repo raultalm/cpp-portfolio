@@ -4,14 +4,6 @@ Point::Point(double x, double y) : m_x(x), m_y(y) {}
 
 Point::~Point() {}
 
-double *Point::getPoint()
-{
-    double *point = new double[2];
-    point[0] = m_x;
-    point[1] = m_y;
-    return point;
-}
-
 double Point::getX() { return m_x; }
 double Point::getY() { return m_y; }
 
