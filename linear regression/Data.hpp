@@ -1,4 +1,5 @@
 #include <vector>
+#include <algorithm>
 #include "Point.hpp"
 
 class Data
@@ -42,6 +43,8 @@ public:
      * Returns the covariance
      * **/
     double getCovariance();
+
+    vector<Point> getData();
 
 
     friend ostream &operator<<(ostream &os, Data &d);

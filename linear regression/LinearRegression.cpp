@@ -19,11 +19,15 @@ double LinearRegression::predict(double x)
 
 ostream &operator<<(ostream &os, const LinearRegression &reg)
 {
+    
     os << "-> Details about the linear regression:" << endl
        << "\tintercept : " << reg.reg_intercept << endl 
        << "\tcoefficient: "<< reg.reg_coeff << endl 
        << "\tf(x) = "<< reg.reg_coeff <<"*x + " << reg.reg_intercept << endl
        << "\tdetermination coefficient: "<< reg.determination_coeff << endl
+       << "\t\t We" << ((reg.determination_coeff < 0.6)?" only":"") 
+            << " explain " << reg.determination_coeff*100 << "%"
+            <<" of the data with our f(x)" << endl
        << "\tMSE: "<< reg.MSE << endl;
     return os;
 }

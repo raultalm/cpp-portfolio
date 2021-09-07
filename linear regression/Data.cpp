@@ -6,6 +6,10 @@ Data::~Data() {}
 void Data::addPoint(Point p)
 {
     m_points.push_back(p);
+
+    // Keep the vector of points sorted
+    sort(m_points.begin(), m_points.end(), [](Point &p1, Point &p2)
+         { return p1.getX() < p2.getX(); });
 }
 
 double Data::getMean(int index)
@@ -45,13 +49,24 @@ double Data::getCovariance()
     return sum - mean;
 }
 
+vector<Point> Data::getData() { return m_points; }
+
 ostream &operator<<(ostream &os, Data &d)
 {
-    os << "-> Details about the dataset:" << endl
-       << "\tmean_x : " << d.getMean(0) << endl 
-       << "\tmean_y: "<< d.getMean(1) << endl 
-       << "\tvariance_x: "<< d.getVariance(0) << endl
-       << "\tvariance_y: "<< d.getVariance(1) << endl
-       << "\tcovariance: "<< d.getCovariance() << endl;
+    os << "--------------------------------------" << endl
+       << "-> Details about the dataset:" << endl
+       << "\tmean_x : " << d.getMean(0) << endl
+       << "\tmean_y: " << d.getMean(1) << endl
+       << "\tvariance_x: " << d.getVariance(0) << endl
+       << "\tvariance_y: " << d.getVariance(1) << endl
+       << "\tcovariance: " << d.getCovariance() << endl
+       << "\tData: ";
+
+    for (Point &p : d.getData())
+    {
+        os << p << ", ";
+    }
+
+    os << endl;
     return os;
 }
