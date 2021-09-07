@@ -13,6 +13,12 @@ double *Point::getPoint()
 double Point::getX() { return m_x; }
 double Point::getY() { return m_y; }
 
+double Point::getCoordinateByIndex(int index)
+{
+    index = index % 2;
+    return (index == 0) ? m_x : m_y;
+}
+
 Point Point::operator+(Point point)
 {
     Point new_point = Point(m_x + point.getX(), m_y + point.getY());

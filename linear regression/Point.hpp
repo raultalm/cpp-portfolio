@@ -14,6 +14,14 @@ public:
     double getX();
     double getY();
 
+    /**
+     * Returns
+     *      if index == 0: m_x
+     *      if index == 1: m_y
+     *      otherwise index = index % 2
+     * **/
+    double getCoordinateByIndex(int index);
+
     // Operators
     Point operator+(Point point);
     Point operator-(Point point);
